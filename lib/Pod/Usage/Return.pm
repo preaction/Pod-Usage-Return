@@ -1,0 +1,62 @@
+package Pod::Usage::Return;
+# ABSTRACT: pod2usage that returns instead of exits
+
+use strict;
+use warnings;
+use Pod::Usage ();
+use base 'Exporter';
+our @EXPORT = qw( pod2usage );
+
+sub pod2usage {
+    my $exitval = 2;
+    my %args;
+    if ( @_ == 1 ) {
+        if ( ref $_[0] eq 'HASH' ) {
+            %args = %{$_[0]};
+        }
+        elsif ( $_[0] =~ /^\d+$/ ) {
+            $exitval = $_[0];
+        }
+        else {
+            $args{-message} = $_[0];
+            $args{-verbose} = 0;
+        }
+    }
+    else {
+        %args = @_;
+    }
+    $args{-exitval} = 'NOEXIT';
+    if ( $exitval >= 2 ) {
+        $args{-output} = *STDERR;
+    }
+    Pod::Usage::pod2usage( \%args );
+    return $exitval;
+}
+
+1;
+__END__
+
+=head1 SYNOPSIS
+
+    use Pod::Usage::Return;
+    use Pod::Usage::Return qw( pod2usage );
+
+    exit pod2usage(0);
+
+    sub main {
+        return pod2usage("ERROR: An error occurred!") if $ERROR;
+    }
+
+    exit pod2usage( -exitval => 1, -message => 'ERROR: An error occurred' );
+
+=head1 DESCRIPTION
+
+This is a drop-in replacement for L<Pod::Usage> C<pod2usage> that returns the
+exit value instead of calling exit.g
+
+=head1 FUNCTIONS
+
+=head2 pod2usage
+
+See L<Pod::Usage> for documentation. Returns the exit code instead of calling
+exit().
