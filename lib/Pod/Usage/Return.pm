@@ -52,7 +52,7 @@ __END__
 =head1 DESCRIPTION
 
 This is a drop-in replacement for L<Pod::Usage> C<pod2usage> that returns the
-exit value instead of calling exit.g
+exit value instead of calling exit.
 
 =head1 FUNCTIONS
 
