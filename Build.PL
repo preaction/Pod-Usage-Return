@@ -28,6 +28,7 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Capture::Tiny" => 0,
     "Test::Compile" => 0,
     "Test::Most" => 0
   }
