@@ -4,7 +4,11 @@ Pod::Usage::Return - pod2usage that returns instead of exits
 
 # VERSION
 
-version 0.003
+version 0.004
+
+# STATUS
+
+<a href="https://travis-ci.org/preaction/Pod-Usage-Return"><img src="https://travis-ci.org/preaction/Pod-Usage-Return.svg?branch=master"></a><a href="https://coveralls.io/r/preaction/Pod-Usage-Return"><img src="https://coveralls.io/repos/preaction/Pod-Usage-Return/badge.png" alt="Coverage Status" /></a>
 
 # SYNOPSIS
 

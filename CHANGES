@@ -1,0 +1,21 @@
+Changelog for Pod-Usage-Return
+
+0.004 2014-11-03T00:39:39
+ - fix prereqs
+ - add travis-ci
+ - SurgicalPodWeaver -> PodWeaver
+
+0.003 2014-06-28T06:21:53
+ - release v0.003
+ - add rationale
+ - fix misspelling in POD
+
+0.002 2014-05-10T02:39:43
+ - update build artifacts
+ - tests require Capture::Tiny
+ - add a minimum version for Pod::Usage
+
+0.001 2014-05-09T04:05:38
+ - initial build artifacts
+ - initial pod2usage use-cases
+
