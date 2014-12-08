@@ -1,4 +1,4 @@
 .build
 *.swp
 *.tar.gz
-Pod-Usage-Return-*
+/Pod-Usage-Return-*
